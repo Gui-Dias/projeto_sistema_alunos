@@ -1,5 +1,5 @@
 import sqlite3
-
+#oijoijio
 def rundb():
     conexao = sqlite3.connect('sistema_alunos/main.db')
 
