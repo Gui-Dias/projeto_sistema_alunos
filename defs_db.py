@@ -6,7 +6,9 @@ def rundb():
     cursor = conexao.cursor()
 
     cursor.execute('PRAGMA foreign_keys = ON;')
-#eoeoeoeoe
+
+    #testte2
+
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS estudantes (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
