@@ -2,7 +2,7 @@ import defs_atualizar
 import sqlite3
 
 def incluir_disciplina(choose, disciplinas):
-    conexao = sqlite3.connect('sistema_alunos/main.db')
+    conexao = sqlite3.connect('main.db')
     cursor = conexao.cursor()
     print(f"Opção escolhida foi: {choose.capitalize()}")
 
@@ -49,7 +49,7 @@ def incluir_disciplina(choose, disciplinas):
 
 
 def listar_disciplina(choose, disciplinas):
-    conexao = sqlite3.connect('sistema_alunos/main.db')
+    conexao = sqlite3.connect('main.db')
     cursor = conexao.cursor()
 
     print(f"Opção escolhida foi: {choose.capitalize()}")
@@ -62,9 +62,11 @@ def listar_disciplina(choose, disciplinas):
     for row in disciplinas:
         print(f'--Disciplina: {row[1]} | ID: {row[0]} | Área: {row[2]}')
 
+    conexao.close()
+
 
 def atualizar_disciplina(choose, disciplinas):
-    conexao = sqlite3.connect('sistema_alunos/main.db')
+    conexao = sqlite3.connect('main.db')
     cursor = conexao.cursor()
 
     print(f"Opção escolhida foi: {choose.capitalize()}")
@@ -102,7 +104,7 @@ def atualizar_disciplina(choose, disciplinas):
                 
 
 def excluir_disciplinas(choose, disciplinas):
-    conexao = sqlite3.connect('sistema_alunos/main.db')
+    conexao = sqlite3.connect('main.db')
     cursor = conexao.cursor()
 
     print(f"Opção escolhida foi: {choose.capitalize()}")
@@ -119,5 +121,6 @@ def excluir_disciplinas(choose, disciplinas):
 
     else:
         print(f'Nenhuma disciplina com o ID {excluir} foi encontrado. ')
-        
+
+    conexao.close()
 

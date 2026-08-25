@@ -1,15 +1,8 @@
 import defs_atualizar
-import defs_estudantes
-import defs_disciplinas
-import defs_professores
-import defs_turmas
-
-estudantes = []
-disciplinas = []
-professores = []
-turmas = []
-matriculas = []
-
+import models.estudantes as estudantes
+import models.disciplinas
+import models.professores
+import models.turmas as turmas
 
 
 def menu_geral(choose, menu):
@@ -30,19 +23,19 @@ def menu_geral(choose, menu):
                 match choose:
 
                     case 'incluir' | '1':
-                        choose = defs_estudantes.incluir_est(choose, estudantes)
+                        choose = estudantes.incluir_est(choose)
 
                         
                     case 'listar' | '2':
-                        choose = defs_estudantes.listar_est(choose, estudantes)
+                        choose = estudantes.listar_est(choose)
 
 
                     case 'atualizar' | '3':
-                        choose = defs_estudantes.atualizar_est(choose, estudantes)
+                        choose = estudantes.atualizar_est(choose)
 
 
                     case 'excluir' | '4':
-                        choose = defs_estudantes.excluir_est(choose, estudantes)
+                        choose = estudantes.excluir_est(choose)
                         
 
                     case 'sair':
@@ -61,16 +54,16 @@ def menu_geral(choose, menu):
                 match choose:
 
                     case 'incluir' | '1':
-                        choose = defs_disciplinas.incluir_disciplina(choose, disciplinas)
+                        choose = disciplinas.incluir_disciplina(choose, disciplinas)
 
                     case 'listar' | '2':
-                        choose = defs_disciplinas.listar_disciplina(choose, disciplinas)
+                        choose = disciplinas.listar_disciplina(choose, disciplinas)
 
                     case 'atualizar' | '3':
-                        choose = defs_disciplinas.atualizar_disciplina(choose, disciplinas)
+                        choose = disciplinas.atualizar_disciplina(choose, disciplinas)
 
                     case 'excluir' | '4':
-                        choose = defs_disciplinas.excluir_disciplinas(choose, disciplinas)
+                        choose = disciplinas.excluir_disciplinas(choose, disciplinas)
 
                     case 'sair':
                         break
@@ -103,16 +96,16 @@ def menu_geral(choose, menu):
                 match choose:
 
                     case 'incluir' | '1':
-                        choose = defs_turmas.incluir_turma(choose, turmas)
+                        choose = turmas.incluir_turma(choose, turmas)
 
                     case 'listar' | '2':
-                        choose = defs_turmas.listar_turma(choose, turmas)
+                        choose = turmas.listar_turma(choose, turmas)
 
                     case 'atualizar' | '3':
-                        choose = defs_turmas.atualizar_turma(choose, turmas)
+                        choose = turmas.atualizar_turma(choose, turmas)
 
                     case 'excluir' | '4':
-                        choose = defs_turmas.excluir_turma(choose, turmas)
+                        choose = turmas.excluir_turma(choose, turmas)
 
                     case 'sair':
                         break

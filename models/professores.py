@@ -2,7 +2,7 @@ import defs_atualizar
 import sqlite3
 
 def incluir_prof(choose, professores):
-    conexao = sqlite3.connect('sistema_alunos/main.db')
+    conexao = sqlite3.connect('main.db')
     cursor = conexao.cursor()
     print(f"Opção escolhida foi: {choose.capitalize()}")
 

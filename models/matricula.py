@@ -1,19 +1,18 @@
 import random
 import sqlite3
+import db_util.defs_db as defs_db
 
 def gerador_matricula():
     matricula_gerador = random.randint(4001, 5999)
 
-    conexao = sqlite3.connect('sistema_alunos/main.db')
-    cursor = conexao.cursor()
-    cursor.execute('SELECT matricula FROM matriculas')
+    query = 'SELECT matricula FROM matriculas'
+    fetchall = defs_db.excute_query_fetchall(query, '')
 
-    existe = {linha[0] for linha in cursor.fetchall()}
+    existe = {linha[0] for linha in fetchall}
 
     while matricula_gerador in existe:
         matricula_gerador = random.randint(4001, 5999)
 
     print(f"Matrícula única gerada com sucesso: {matricula_gerador}")
 
-    conexao.close()
     return matricula_gerador
