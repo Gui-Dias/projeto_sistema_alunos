@@ -1,7 +1,7 @@
 import defs_atualizar
 
 
-def incluir_turma(choose, turmas):
+def incluir_turma(choose):
     print(f"Opção escolhida foi: {choose.capitalize()}")
 
     try:
@@ -29,7 +29,7 @@ def incluir_turma(choose, turmas):
         print('Tipo de dado inserido não é válido')
 
 
-def listar_turma(choose, turmas):
+def listar_turma(choose):
     print(f"Opção escolhida foi: {choose.capitalize()}")
 
     if turmas:
@@ -40,7 +40,7 @@ def listar_turma(choose, turmas):
     else: print('\n','Nenhuma turma cadastrada.')
 
 
-def atualizar_turma(choose, turmas):
+def atualizar_turma(choose):
     print(f"Opção escolhida foi: {choose.capitalize()}")
     atualizar = input('Qual o ID da disciplina que deseja atualizar?: ')
     print('\n')
@@ -67,7 +67,7 @@ def atualizar_turma(choose, turmas):
                 print('Valor não encontrado')
             
 
-def excluir_turma(choose, turmas):
+def excluir_turma(choose):
     try:
         print(f"Opção escolhida foi: {choose.capitalize()}")
         excluir = int(input('Qual o ID da turma que deseja excluir?: '))

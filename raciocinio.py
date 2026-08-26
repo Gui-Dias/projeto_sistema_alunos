@@ -8,7 +8,7 @@ while choose != 'sair':
     print("2. Disciplinas")
     print("3. Professores")
     print("4. Turmas")
-    print("5. Matrículas")
+    # print("5. Matrículas")
     choose = str(input('Digite a opção desejada ou "Sair" para sair: '))
     choose = choose.lower()
 
@@ -34,9 +34,9 @@ while choose != 'sair':
             choose = defs_menus.menu_geral(choose, menu)
 
 
-        case '5' | 'matriculas':
-            menu = 'matriculas'
-            choose = defs_menus.menu_geral(choose, menu)
+        # case '5' | 'matriculas':
+        #     menu = 'matriculas'
+        #     choose = defs_menus.menu_geral(choose, menu)
 
         case 'sair':
             break

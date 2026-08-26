@@ -1,5 +1,7 @@
 import sqlite3
 
+caminho_db = 'db_util/main.db'
+
 def rundb():
     conexao = sqlite3.connect('main.db')
 
@@ -52,7 +54,7 @@ def rundb():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             matricula INTEGER,
             estudante_id INTEGER,
-            FOREIGN KEY (estudante_id) REFERENCES ESTUDANTES(id)
+            FOREIGN KEY (estudante_id) REFERENCES estudantes(id)
             );
 
     ''')
@@ -78,7 +80,7 @@ def execute_clear(query):
     conexao = None
 
     try:
-        conexao = sqlite3.connect('db_util/main.db')
+        conexao = sqlite3.connect(caminho_db)
         cursor = conexao.cursor()
         cursor.execute(query)
         conexao.commit()
@@ -92,7 +94,7 @@ def execute_clear(query):
 def excute_query(query, dados):
 
     try:
-        conexao = sqlite3.connect('db_util/main.db')
+        conexao = sqlite3.connect(caminho_db)
         cursor = conexao.cursor()
         cursor.execute(query, dados)
         conexao.commit()
@@ -103,7 +105,7 @@ def excute_query(query, dados):
 def excute_query_return_id(query, dados):
 
     try:
-        conexao = sqlite3.connect('db_util/main.db')
+        conexao = sqlite3.connect(caminho_db)
         cursor = conexao.cursor()
         cursor.execute(query, dados)
         id_gerado = cursor.lastrowid
@@ -120,7 +122,7 @@ def excute_query_fetchall(query, dados):
     conexao = None
 
     try:
-        conexao = sqlite3.connect('db_util/main.db')
+        conexao = sqlite3.connect(caminho_db)
         cursor = conexao.cursor()
         cursor.execute(query, dados)
         fetchall = cursor.fetchall()
@@ -139,7 +141,7 @@ def excute_query_fetchone(query, dados):
     conexao = None
 
     try:
-        conexao = sqlite3.connect('db_util/main.db')
+        conexao = sqlite3.connect(caminho_db)
         cursor = conexao.cursor()
         cursor.execute(query, dados)
         fetchone = cursor.fetchone()

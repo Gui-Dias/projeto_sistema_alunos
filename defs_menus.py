@@ -1,7 +1,7 @@
 import defs_atualizar
 import models.estudantes as estudantes
-import models.disciplinas
-import models.professores
+import models.disciplinas as disciplinas
+import models.professores as professores
 import models.turmas as turmas
 
 
@@ -54,16 +54,16 @@ def menu_geral(choose, menu):
                 match choose:
 
                     case 'incluir' | '1':
-                        choose = disciplinas.incluir_disciplina(choose, disciplinas)
+                        choose = disciplinas.incluir_disciplina(choose)
 
                     case 'listar' | '2':
-                        choose = disciplinas.listar_disciplina(choose, disciplinas)
+                        choose = disciplinas.listar_disciplina(choose)
 
                     case 'atualizar' | '3':
-                        choose = disciplinas.atualizar_disciplina(choose, disciplinas)
+                        choose = disciplinas.atualizar_disciplina(choose)
 
                     case 'excluir' | '4':
-                        choose = disciplinas.excluir_disciplinas(choose, disciplinas)
+                        choose = disciplinas.excluir_disciplinas(choose)
 
                     case 'sair':
                         break
@@ -75,16 +75,16 @@ def menu_geral(choose, menu):
                 match choose:
 
                     case 'incluir' | '1':
-                        choose = defs_professores.incluir_prof(choose, professores)  
+                        choose = professores.incluir_prof(choose)  
 
                     case 'listar' | '2':
-                        choose = defs_professores.listar_prof(choose, professores)  
+                        choose = professores.listar_prof(choose)  
 
                     case 'atualizar' | '3':
-                        choose = defs_professores.atualizar_prof(choose, professores)  
+                        choose = professores.atualizar_prof(choose)  
 
                     case 'excluir' | '4':
-                        choose = defs_professores.excluir_prof(choose, professores)  
+                        choose = professores.excluir_prof(choose)  
 
                     case 'sair':
                         break
@@ -96,16 +96,16 @@ def menu_geral(choose, menu):
                 match choose:
 
                     case 'incluir' | '1':
-                        choose = turmas.incluir_turma(choose, turmas)
+                        choose = turmas.incluir_turma(choose)
 
                     case 'listar' | '2':
-                        choose = turmas.listar_turma(choose, turmas)
+                        choose = turmas.listar_turma(choose)
 
                     case 'atualizar' | '3':
-                        choose = turmas.atualizar_turma(choose, turmas)
+                        choose = turmas.atualizar_turma(choose)
 
                     case 'excluir' | '4':
-                        choose = turmas.excluir_turma(choose, turmas)
+                        choose = turmas.excluir_turma(choose)
 
                     case 'sair':
                         break
